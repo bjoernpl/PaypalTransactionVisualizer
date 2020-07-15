@@ -10,19 +10,12 @@ This project was used as a way to try out many more advanced python features suc
 is done using [Matplotlib](https://matplotlib.org/).
 
 ## 1. Installation
-To use this project you can:
-
-1. Run it online using [DataLore](https://datalore.io/notebook/ZzZiQkJ5dGKsGciTsZaT0t/PsjMBL65cDv0ruSQKuPCGL/)
-    * Follow the link to open the notebook virtual environment
-    * Navigate to ``Tools -> Attached files`` and upload your ``payments.html``
-     (see section 2. for more info on how to access your your PayPal transaction data)
-    * Run all cells to see results
-2. Or you can run the notebook locally
-    * First clone the repository: ```git clone https://github.com/bjoernpl/PaypalTransactionVisualizer.git```
-    * Navigate to src directory: ```cd PaypalTransactionVisualizer```
-    * Launch the notebook with ```jupyter notebook src/TransactionVisualizer.ipynb```
-    * Exchange the html in ```payments.html``` with you PayPal transaction html
-    * Run all cells to see the results
+To run this notebook follow these steps
+1. First clone the repository: ```git clone https://github.com/bjoernpl/PaypalTransactionVisualizer.git```
+2. Navigate to src directory: ```cd PaypalTransactionVisualizer```
+3. Launch the notebook with ```jupyter notebook src/TransactionVisualizer.ipynb```
+4. Exchange the html in ```payments.html``` with you PayPal transaction html
+5. Run all cells to see the results
 
 ## 2. Retrieving Paypal transaction html
 1. Log in to your account at [paypal.com](paypal.com)
