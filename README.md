@@ -15,10 +15,11 @@ To run this notebook follow these steps
 2. Navigate to the directory: ```cd PaypalTransactionVisualizer```
 3. Create a virtual environment with ``conda create --name payment_visualizer``
 4. Activate environment with ``conda activate payment_visualizer``
-5. Install requirements with ``pip install -r requirements.txt``
-6. Launch the notebook with ```jupyter notebook src/TransactionVisualizer.ipynb```
-7. Exchange the html in ```payments.html``` with you PayPal transaction html
-8. Run all cells to see the results
+5. Install requirements with ``python3 - m pip install -r requirements.txt``
+6. Install jupyter notebook in conda env ```conda install jupyter```
+7. Launch the notebook with ```jupyter notebook src/TransactionVisualizer.ipynb```
+8. Exchange the html in ```payments.html``` with you PayPal transaction html
+9. Run all cells to see the results
 
 ## 2. Retrieving Paypal transaction html
 1. Log in to your account at [paypal.com](paypal.com)
