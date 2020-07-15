@@ -19,8 +19,8 @@ To use this project you can:
     * Run all cells to see results
 2. Or you can run the notebook locally
     * First clone the repository: ```git clone https://github.com/bjoernpl/PaypalTransactionVisualizer.git```
-    * Navigate to src directory: ```cd PaypalTransactionVisualizer/src```
-    * Launch the notebook with ```jupyter notebook TransactionVisualizer.ipynb```
+    * Navigate to src directory: ```cd PaypalTransactionVisualizer```
+    * Launch the notebook with ```jupyter notebook src/TransactionVisualizer.ipynb```
     * Exchange the html in ```payments.html``` with you PayPal transaction html
     * Run all cells to see the results
 
