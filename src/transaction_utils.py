@@ -64,5 +64,6 @@ def get_transaction_data(transaction: BeautifulSoup) -> Transaction:
     date_string = time_soup.next
 
     category = time_soup.findChild("div")
+    category_string = category.next if category else "Other"
 
-    return Transaction(name, amount, clean_date(date_string), category.next)
+    return Transaction(name, amount, clean_date(date_string), category_string)
