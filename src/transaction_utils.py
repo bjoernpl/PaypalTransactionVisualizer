@@ -24,6 +24,7 @@ from typing import Tuple
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 from datetime import date, timedelta
+from transactions import Transaction
 
 
 def clean_date(date_string: str) -> date:
@@ -43,7 +44,7 @@ def clean_date(date_string: str) -> date:
         return parse(date_string).date()
 
 
-def get_transaction_data(transaction: BeautifulSoup) -> Tuple[str, float, date]:
+def get_transaction_data(transaction: BeautifulSoup) -> Transaction:
     """
     Gets the valuable data from a single transaction.
 
@@ -51,7 +52,7 @@ def get_transaction_data(transaction: BeautifulSoup) -> Tuple[str, float, date]:
     paypal transactions html
     :return: a tuple of (name of other party, transaction amount, date)
     """
-    name = transaction.find("strong", {"class": "counterparty-text"}).string
+    name = transaction.find("strong", {"class": "counterparty-text"}).string.strip()
 
     amount_soup = transaction.find("span", {"class": "netAmount"})
     # html is different for receiving and sending transactions
@@ -61,6 +62,9 @@ def get_transaction_data(transaction: BeautifulSoup) -> Tuple[str, float, date]:
     else:
         amount = -float(amount_soup.string.replace(",", "."))
 
-    date_string = transaction.find("span", {"class": "relative-time"}).next
+    time_soup = transaction.find("span", {"class": "relative-time"})
+    date_string = time_soup.next
 
-    return name.strip(), amount, clean_date(date_string)
+    category = time_soup.findChild("div")
+
+    return Transaction(name, amount, clean_date(date_string), category.next)
