@@ -19,8 +19,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE."""
-from typing import Tuple
-
 from bs4 import BeautifulSoup
 from dateutil.parser import parse
 from datetime import date, timedelta
@@ -50,7 +48,7 @@ def get_transaction_data(transaction: BeautifulSoup) -> Transaction:
 
     :param transaction: the BeautifulSoup of a transaction found in
     paypal transactions html
-    :return: a tuple of (name of other party, transaction amount, date)
+    :return: a Transaction object with name, amount, date and category
     """
     name = transaction.find("strong", {"class": "counterparty-text"}).string.strip()
 
